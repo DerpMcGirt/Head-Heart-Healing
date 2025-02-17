@@ -84,19 +84,37 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#about {
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 2px 2px black;
+}
 
+#about-hero {
+    text-align: center;
+    background-image: url('/img/clouds.jpg');
+    background-size: cover;
+    width: 95vw;
+    height: 75vh;
+    align-content: start;
+    justify-content: center;
+    color: var(--uchu-orange);
+    /*-webkit-text-stroke: 1px var(--uchu-dark-pink);*/
+    text-shadow: 2px 2px black;
+    -webkit-text-stroke: 1px black;
 }
 
 body {
-    background-image: url("/img/m_background_camp.svg");
+    background-image: url("/img/bg_mountain_trees.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 button {
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 15px;
 }
 
@@ -105,18 +123,33 @@ button {
     flex-direction: row;
     justify-content: center;
     margin-top: 2rem;
-}
 
+}
 
 
 #button-call {
-    background-color: #fade6f;
+    background-color: var(--uchu-yellow);
+    outline: 3px solid var(--uchu-green);
 }
 
-#button-read {
-    background-color: lightgreen;
+#button-call a {
+    color: var(--uchu-green);
+    -webkit-text-stroke: 1px black;
 }
-/*130 29 88*/
+
+
+#button-read {
+    background-color: var(--uchu-green);
+    outline: 3px solid var(--uchu-yellow);
+}
+
+
+#button-read a {
+    text-decoration: none;
+    color: var(--uchu-yellow);
+    -webkit-text-stroke: 1px black;
+}
+
 
 .card-container {
     display: inline-flex;
@@ -127,7 +160,6 @@ button {
     text-align: left;
     background: radial-gradient(ellipse at bottom right, #EB5C3C, #fade6f);
     color: rgba(118, 0, 94, 0.8);
-    background-blend-mode: screen;
     border-radius: 10px;
     padding-block: 0;
     margin-block: 0;
@@ -178,7 +210,7 @@ button {
     text-shadow: 1px 1px 1px #EB5C3C;
 }
 
-#faq h2 {
+#faq h3, h2 {
     color: #76005e;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -225,6 +257,13 @@ button {
     font-style: normal;
 }
 
+.font-indie {
+    font-family: "Indie Flower", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+
 
 footer {
     display: flex;
@@ -239,16 +278,17 @@ footer {
 #greeting {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    width: 80vw;
 }
 
 
 #greeting p {
     font-size: 2.5rem;
-    color: orange;
-    mix-blend-mode: screen;
+    color: var(--uchu-yellow);
+    text-shadow: 0 0 5px black;
 }
 
 h1 {
@@ -258,11 +298,59 @@ h1 {
 h2, h3, h4, h5, h6 {
     color: rgba(250, 218, 110, 1);
     margin-bottom: 0;
-    background-blend-mode: screen;
+    /*background-blend-mode: screen;*/
     -webkit-text-stroke: 1px #EB5C3C;
 }
 
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--uchu-light-purple);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 800px;
+    text-align: center;
+    text-shadow: 1px 1px 1px var(--uchu-pink);
+    margin-top: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 26px -18px inset;
+    outline: 10px dotted var(--uchu-pink);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.hero-content p {
+    color: #666;
+    margin: 10px 0;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-button:hover {
+    background-color: #0056b3;
+}
+
 header {
+    font-family: "American Typewriter", cursive;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -272,13 +360,11 @@ header {
 header a {
     font-family: "American Typewriter", cursive;
     text-decoration: none;
-    /*color: rgb(255, 118, 20);*/
-    color: rgba(250, 218, 110, 1);
-    -webkit-text-stroke: 1px #EB5C3C;
+    color: var(--uchu-yellow);
     font-weight: bold;
     font-size: 1.5em;
     text-shadow: 2px 2px black;
-    /*mix-blend-mode: screen;*/
+
 }
 
 html {
@@ -290,11 +376,24 @@ html {
 
 
 #logo {
-    border: 1em dotted  #EB5C3C;
+    border: 1em dotted  var(--uchu-orange);
     /*border-block-color: whitesmoke;*/
     max-width: 25%;
     border-radius: 25px;
 
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 
